@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nextjsmonorepo/api/browser": ["libs/api/browser/src/index.ts"],
+      "@nextjsmonorepo/api/generated": ["libs/api/generated/src/index.ts"],
+      "@nextjsmonorepo/api/server": ["libs/api/server/src/index.ts"],
+      "@nextjsmonorepo/server": ["libs/server/src/index.ts"],
+      "@nextjsmonorepo/shared-components": [
+        "libs/shared-components/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,12 @@
+diff --git a/node_modules/swagger-typescript-api/src/swagger.js b/node_modules/swagger-typescript-api/src/swagger.js
+index 2fddaa7..ab74343 100644
+--- a/node_modules/swagger-typescript-api/src/swagger.js
++++ b/node_modules/swagger-typescript-api/src/swagger.js
+@@ -86,6 +86,7 @@ const convertSwaggerObject = (swaggerSchema, converterOptions) => {
+           warnOnly: true,
+           refSiblings: "preserve",
+           rbname: "requestBodyName",
++          resolve: true,
+         },
+         function (err, options) {
+           const parsedSwaggerSchema = _.get(err, "options.openapi", _.get(options, "openapi"));
