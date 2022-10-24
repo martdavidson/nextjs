@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "15.0.0",
+    "cookies-next": "^2.1.1",
     "core-js": "^3.6.5",
     "next": "12.3.1",
     "patch-package": "^6.4.7",

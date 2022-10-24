@@ -1829,9 +1829,9 @@ export class Api<
     /**
      * @description Returns the activities of an athlete for a specific identifier. Requires activity:read. Only Me activities will be filtered out unless requested by a token with activity:read_all.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetLoggedInAthleteActivities
-     * @summary List Athlete Activities
+     * @summary List Athlete ActivityTeasers
      * @request GET:/athlete/activities
      * @secure
      */
@@ -2042,9 +2042,9 @@ export class Api<
     /**
      * @description Creates a manual activity for an athlete, requires activity:write scope.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name CreateActivity
-     * @summary Create an Activity
+     * @summary Create an ActivityTeaser
      * @request POST:/activities
      * @secure
      */
@@ -2061,9 +2061,9 @@ export class Api<
     /**
      * @description Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetActivityById
-     * @summary Get Activity
+     * @summary Get ActivityTeaser
      * @request GET:/activities/{id}
      * @secure
      */
@@ -2082,9 +2082,9 @@ export class Api<
     /**
      * @description Updates the given activity that is owned by the authenticated athlete. Requires activity:write. Also requires activity:read_all in order to update Only Me activities
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name UpdateActivityById
-     * @summary Update Activity
+     * @summary Update ActivityTeaser
      * @request PUT:/activities/{id}
      * @secure
      */
@@ -2105,9 +2105,9 @@ export class Api<
     /**
      * @description Returns the laps of an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetLapsByActivityId
-     * @summary List Activity Laps
+     * @summary List ActivityTeaser Laps
      * @request GET:/activities/{id}/laps
      * @secure
      */
@@ -2122,9 +2122,9 @@ export class Api<
     /**
      * @description Summit Feature. Returns the zones of a given activity. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetZonesByActivityId
-     * @summary Get Activity Zones
+     * @summary Get ActivityTeaser Zones
      * @request GET:/activities/{id}/zones
      * @secure
      */
@@ -2139,9 +2139,9 @@ export class Api<
     /**
      * @description Returns the comments on the given activity. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetCommentsByActivityId
-     * @summary List Activity Comments
+     * @summary List ActivityTeaser Comments
      * @request GET:/activities/{id}/comments
      * @secure
      */
@@ -2160,9 +2160,9 @@ export class Api<
     /**
      * @description Returns the athletes who kudoed an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
      *
-     * @tags Activities
+     * @tags ActivityTeasers
      * @name GetKudoersByActivityId
-     * @summary List Activity Kudoers
+     * @summary List ActivityTeaser Kudoers
      * @request GET:/activities/{id}/kudos
      * @secure
      */
@@ -2183,7 +2183,7 @@ export class Api<
      *
      * @tags Streams
      * @name GetActivityStreams
-     * @summary Get Activity Streams
+     * @summary Get ActivityTeaser Streams
      * @request GET:/activities/{id}/streams
      * @secure
      */
@@ -2264,7 +2264,7 @@ export class Api<
      *
      * @tags Clubs
      * @name GetClubActivitiesById
-     * @summary List Club Activities
+     * @summary List Club ActivityTeasers
      * @request GET:/clubs/{id}/activities
      * @secure
      */
@@ -2373,7 +2373,7 @@ export class Api<
      *
      * @tags Uploads
      * @name CreateUpload
-     * @summary Upload Activity
+     * @summary Upload ActivityTeaser
      * @request POST:/uploads
      * @secure
      */

@@ -1,14 +1,13 @@
 import { Api } from '@nextjsmonorepo/api/generated';
+import { getCookie } from 'cookies-next';
 
 export const CLIENT_ID = '13620';
+
 export const api = new Api({
   baseApiParams: {
-    headers:
-      typeof window !== 'undefined'
-        ? {
-            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-          }
-        : {},
+    headers: {
+      Authorization: `Bearer ${getCookie('access_token')}`,
+    },
   },
 });
 

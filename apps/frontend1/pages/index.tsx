@@ -1,33 +1,51 @@
-import { Activities, useAuthenticate } from '@nextjsmonorepo/shared-components';
+import {
+  ActivityTeasers,
+  useAuthenticate,
+} from '@nextjsmonorepo/shared-components';
 import { GetServerSideProps } from 'next';
 import { exchangeToken } from '@nextjsmonorepo/api/server';
+import {
+  Api,
+  GetLoggedInAthleteActivitiesData,
+  GetLoggedInAthleteActivitiesError,
+} from '@nextjsmonorepo/api/generated';
 
 interface IProps {
-  accessToken?: string;
+  activities?: GetLoggedInAthleteActivitiesData;
+  error?: GetLoggedInAthleteActivitiesError;
 }
 
 export function Index(props: IProps) {
-  useAuthenticate(props.accessToken);
+  useAuthenticate();
 
-  return <Activities />;
+  return <ActivityTeasers activities={props.activities} />;
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { code } = context.query;
+export const getServerSideProps: GetServerSideProps<IProps> = async (
+  context
+) => {
+  const api = new Api({
+    baseApiParams: {
+      headers: {
+        Authorization: `Bearer ${context.req.cookies.access_token}`,
+      },
+    },
+  });
 
-  if (code) {
-    const { access_token } = await exchangeToken(code as string);
+  try {
+    const activities = await api.athlete.getLoggedInAthleteActivities({});
+    const activitiesJSON = await activities.json();
 
     return {
       props: {
-        accessToken: access_token,
+        activities: activitiesJSON,
       },
     };
+  } catch (e) {
+    return {
+      props: {},
+    };
   }
-
-  return {
-    props: {},
-  };
 };
 
 export default Index;

@@ -1,4 +1,4 @@
-import { Activities, useAuthenticate } from '@nextjsmonorepo/shared-components';
+import { ActivityTeasers, useAuthenticate } from '@nextjsmonorepo/shared-components';
 import { GetServerSideProps } from 'next';
 import { exchangeToken } from '@nextjsmonorepo/api/server';
 
@@ -9,7 +9,7 @@ interface IProps {
 export function Index(props: IProps) {
   useAuthenticate(props.accessToken);
 
-  return <Activities />;
+  return <ActivityTeasers />;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
