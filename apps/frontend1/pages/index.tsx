@@ -3,7 +3,6 @@ import {
   useAuthenticate,
 } from '@nextjsmonorepo/shared-components';
 import { GetServerSideProps } from 'next';
-import { exchangeToken } from '@nextjsmonorepo/api/server';
 import {
   Api,
   GetLoggedInAthleteActivitiesData,
